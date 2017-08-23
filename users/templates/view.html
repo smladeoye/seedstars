@@ -1,0 +1,32 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+    Seedstars View User
+{% endblock %}
+
+{% block content %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+
+    <ul>
+        <li><a href="{% url 'list' %}">List Users</a></li>
+        <li><a href="{% url 'edit' user.id %}">Edit User</a></li>
+        <li><a href="{% url 'add' %}">Add User</a></li>
+    </ul>
+    <fieldset>
+        <legend>User {{ user.id }}</legend>
+
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>NAME:</td>
+                <td>{{ user.name }}</td>
+            </tr>
+
+            <tr>
+                <td>EMAIL:</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        </table>
+    </fieldset>
+{% endblock %}

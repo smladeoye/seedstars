@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+    Seedstars Welcome
+{% endblock %}
+
+{% block content %}
+    <h3>WELCOME</h3>
+    <div class="center-block">
+        <ul>
+            <li><a href="{% url "list" %}">LIST USERS</a></li>
+            <li><a href="{% url "add" %}">ADD USER</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+    Seedstars Edit User {{ user.id }}
+{% endblock %}
+
+{% block content %}
+    <ul>
+        <li><a href="{% url 'list' %}">List Users</a></li>
+    </ul>
+    <fieldset>
+        <legend>Edit User</legend>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form">
+                <label title="name">Name</label>
+                <input required type="text" name="name" value="{{ user.name }}" title="name">
+            </div>
+
+            <div>
+                <label title="email">Email</label>
+                <input required type="email" name="email" value="{{ user.email }}" title="email">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </fieldset>
+{% endblock %}
